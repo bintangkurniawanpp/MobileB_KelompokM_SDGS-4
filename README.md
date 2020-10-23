@@ -4,9 +4,9 @@ Aplikasi bertema pendidikan untuk meningkatkan kualitas pendidikan di Indonesia
 
 ## Anggota Kelompok
 
-182410103027 - Afdhalul Khairi Affan
-182410103031 - Dyah Ayuningtyas
-182410103075 - Bintang Kurniawan Pratama Putra
+-182410103027 - Afdhalul Khairi Affan
+-182410103031 - Dyah Ayuningtyas
+-182410103075 - Bintang Kurniawan Pratama Putra
 
 ## Progress
 
