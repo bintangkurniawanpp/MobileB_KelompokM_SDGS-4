@@ -10,7 +10,7 @@ Aplikasi bertema pendidikan untuk meningkatkan kualitas pendidikan di Indonesia
 
 ## Progress
 
--
+- tambah page beranda, quis, dan setting
 
 ## Getting Started
 
