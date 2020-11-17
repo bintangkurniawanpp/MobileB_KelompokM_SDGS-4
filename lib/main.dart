@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:rank_education/ui/page/HomePage.dart';
-import 'package:rank_education/ui/page/ExerciseQuisPage.dart';
-import 'package:rank_education/ui/page/Settings.dart';
+import 'ui/page/pages.dart';
+
 
 void main() {
   runApp(MyApp());
