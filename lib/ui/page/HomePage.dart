@@ -4,7 +4,6 @@ class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
-
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
@@ -13,9 +12,31 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: mainColor,
         title: Text('Beranda'),
         ),
-        body: Center(
-          child: Text('Ini beranda'),
-          ),
+
+        body: ListView(
+          children: <Widget>[
+            Padding(
+              padding: EdgeInsets.all(8.0),
+              child:
+              ListTile(
+                leading: Icon(Icons.book),
+                title: Text('Daftar Quis yang sudah diikui : '),
+              ),
+            ),
+              ListTile(
+                leading: Icon(Icons.book),
+                title: Text('Quis 2 Bahasa Indonesia'),
+              ),
+              ListTile(
+                leading: Icon(Icons.book),
+                title: Text('Latiahan 3 Matematika'),
+              ),
+              ListTile(
+                leading: Icon(Icons.book),
+                title: Text('Quis 2 Biologi'),
+              ),
+          ],
+        ),
     );
   }
 }
