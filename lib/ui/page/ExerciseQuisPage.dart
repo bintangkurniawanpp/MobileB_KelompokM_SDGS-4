@@ -10,6 +10,7 @@ class _ExerciseQuisState extends State<ExerciseQuis> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar : AppBar(
+        backgroundColor: mainColor,
         title: Text('Quis'),
       ),
       body: Center(

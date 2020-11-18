@@ -10,6 +10,7 @@ class _SettingState extends State<Setting> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar : new AppBar(
+          backgroundColor: mainColor,
           title: Text('Pengaturan'),
         ),
         body: Center(
