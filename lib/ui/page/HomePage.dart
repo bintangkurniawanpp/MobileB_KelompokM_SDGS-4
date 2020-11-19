@@ -19,8 +19,8 @@ class _HomePageState extends State<HomePage> {
               padding: EdgeInsets.all(8.0),
               child:
               ListTile(
-                leading: Icon(Icons.book),
-                title: Text('Daftar Quis yang sudah diikui : '),
+                // leading: Icon(Icons.book),
+                title: Text('Daftar Quis yang sudah diikuti : '),
               ),
             ),
               ListTile(
