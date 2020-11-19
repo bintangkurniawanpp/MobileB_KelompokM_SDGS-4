@@ -41,22 +41,22 @@ class SplashPage extends StatelessWidget {
                     ),
                     color: mainColor,
                     onPressed: () {
-                      Routes.changePageNoBack(context, MainPage());
+                      Routes.changePage(context, SignUpPage());
                     }),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    "Already have an account? ",
+                    "Sudah punya akun? ",
                     style: greyTextFont.copyWith(fontWeight: FontWeight.w400),
                   ),
                   GestureDetector(
                     onTap: () {
-                      
+                      Routes.changePage(context, SignInPage());
                     },
                     child: Text(
-                      "Sign In",
+                      "Masuk",
                       style: purpleTextFont,
                     ),
                   )
