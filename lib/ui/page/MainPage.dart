@@ -32,7 +32,7 @@ int _currentIndex = 0;
             ),
           BottomNavigationBarItem(
             icon: Icon(Icons.library_books),
-            title: Text('Quis'),
+            title: Text('Gabung Quis'),
             ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),

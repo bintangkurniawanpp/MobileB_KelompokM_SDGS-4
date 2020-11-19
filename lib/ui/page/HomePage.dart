@@ -5,6 +5,21 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 class _HomePageState extends State<HomePage> {
+  final List history = [
+    "UTS Bahasa Indonesia",
+    "UTS Matematika",
+    "Latihan Soal Matematika 2",
+    "UTS Bahasa Inggris",
+    "UTS Bahasa Jawa",
+    "Quis 2 Biologi",
+    "UTS Sejarah",
+    "Quis 1 Bahasa Inggris",
+    "Latihan Soal Fisika",
+    "Latihan Soal Matematika 1",
+    "Quis 2 Matematika",
+    "Quis 1 Biologi"
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,29 +28,24 @@ class _HomePageState extends State<HomePage> {
         title: Text('Beranda'),
         ),
 
-        body: ListView(
-          children: <Widget>[
-            Padding(
-              padding: EdgeInsets.all(8.0),
-              child:
-              ListTile(
-                // leading: Icon(Icons.book),
-                title: Text('Daftar Quis yang sudah diikuti : '),
+        body: ListView.builder(
+          itemBuilder: (context, index) {
+            return Card(
+              child: ListTile(
+                  title: Text(
+                      history[index],
+                      style: TextStyle(fontSize: 17)
+                  ),
+                  leading: CircleAvatar(
+                    child: Text(
+                        history[index][0],
+                        style: TextStyle(fontSize: 20)
+                    ),
+                  )
               ),
-            ),
-              ListTile(
-                leading: Icon(Icons.book),
-                title: Text('Quis 2 Bahasa Indonesia'),
-              ),
-              ListTile(
-                leading: Icon(Icons.book),
-                title: Text('Latiahan 3 Matematika'),
-              ),
-              ListTile(
-                leading: Icon(Icons.book),
-                title: Text('Quis 2 Biologi'),
-              ),
-          ],
+            );
+          },
+          itemCount: history.length,
         ),
     );
   }
