@@ -75,7 +75,7 @@ class _SignInPageState extends State<SignInPage> {
               ),
                 GestureDetector(
                   onTap: () {
-                    Routes.changePageNoBack(context, MainPage());
+                    Routes.changePageNoBack(context, SignUpPage());
                   },
                   child: Text(
                     "Daftar",
