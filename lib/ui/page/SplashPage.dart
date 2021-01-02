@@ -20,12 +20,12 @@ class SplashPage extends StatelessWidget {
               Container(
                 margin: EdgeInsets.only(top: 70, bottom: 16),
                 child: Text(
-                  "Lorem",
+                  "Rank Education",
                   style: blackTextFont.copyWith(fontSize: 20),
                 ),
               ),
               Text(
-                "Lorem lorem lorem lorem\nlorem lorem lorem",
+                "Aplikasi Mobile untuk meningkatkan kualitas, \nkecerdasan dan ketepatan siswa",
                 style: greyTextFont.copyWith(
                     fontSize: 16, fontWeight: FontWeight.w300),
                 textAlign: TextAlign.center,
@@ -36,7 +36,7 @@ class SplashPage extends StatelessWidget {
                 margin: EdgeInsets.only(top: 70, bottom: 19),
                 child: RaisedButton(
                     child: Text(
-                      "Get Started",
+                      "Mulai",
                       style: whiteTextFont.copyWith(fontSize: 16),
                     ),
                     color: mainColor,

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "560674530504",
+    "firebase_url": "https://rank-education-be830.firebaseio.com",
+    "project_id": "rank-education-be830",
+    "storage_bucket": "rank-education-be830.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:560674530504:android:5cedbb898dda1f568671fd",
+        "android_client_info": {
+          "package_name": "com.example.rank_education"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "560674530504-321b9b00d1q2leghid7v1qblu5nahiof.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-1ryaA4Tr6vvOxwuDhEBNWSuq4Ickgbg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "560674530504-321b9b00d1q2leghid7v1qblu5nahiof.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
