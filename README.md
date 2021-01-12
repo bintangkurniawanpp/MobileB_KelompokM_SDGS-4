@@ -1,6 +1,6 @@
 # Rank Education
 
-Aplikasi bertema pendidikan untuk meningkatkan kualitas pendidikan di Indonesia
+Aplikasi bertema pendidikan untuk meningkatkan kualitas pembelajaran di Indonesia
 
 ## Anggota Kelompok
 
