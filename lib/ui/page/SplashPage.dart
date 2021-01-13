@@ -19,10 +19,7 @@ class SplashPage extends StatelessWidget {
               ),
               Container(
                 margin: EdgeInsets.only(top: 70, bottom: 16),
-                child: Text(
-                  "Rank Education",
-                  style: blackTextFont.copyWith(fontSize: 20),
-                ),
+                child: AppLogo()
               ),
               Text(
                 "Aplikasi Mobile untuk meningkatkan kualitas, \nkecerdasan dan ketepatan siswa",

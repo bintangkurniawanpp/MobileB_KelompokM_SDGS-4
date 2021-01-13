@@ -6,39 +6,35 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-int _currentIndex = 0;
+  int _page = 0;
+  GlobalKey _bottomNavigationKey = GlobalKey();
   final List<Widget> _children = [
-    //HomePage(),
-    ExerciseQuis(),
+    QuisList(),
+    AddQuis(),
     Setting(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _children[_currentIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: mainColor,
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.black,
-        onTap: (int index) {
-          setState(() => _currentIndex = index);
-        },
-        currentIndex: _currentIndex, 
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            title: Text('Beranda'),
-            ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.library_books),
-            title: Text('Gabung Quis'),
-            ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            title: Text('Pengaturan'),
-            ),
-        ]),      
-    );
+        bottomNavigationBar: CurvedNavigationBar(
+          key: _bottomNavigationKey,
+          color: mainColor,
+          buttonBackgroundColor: accentColor2,
+          backgroundColor: Colors.white,
+          items: <Widget>[
+            Icon(Icons.list, size: 30),
+            Icon(Icons.add, size: 30),
+            Icon(Icons.settings, size: 30),
+          ],
+          onTap: (index) {
+            setState(() {
+              _page = index;
+            });
+          },
+        ),
+        body: _children[_page],
+      );
   }
+
 }
