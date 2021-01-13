@@ -35,7 +35,12 @@ class _SignInPageState extends State<SignInPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Form(
+      body: isLoading ? Container(
+        child: Center(
+          child: CircularProgressIndicator(),
+        )
+      ) : Form(
+        key: _formKey,
         child: Container(
             padding: EdgeInsets.symmetric(horizontal: defaultMargin),
             child: ListView(
@@ -44,13 +49,15 @@ class _SignInPageState extends State<SignInPage> {
                   height: 50,
                 ),
                 SizedBox(
-                    height: 120, child: Image.asset("assets/images/rank_logo.png")),
+                    height: 120, child: Image.asset("assets/images/rank_logo.png")
+                ),
                 Container(
                   margin: EdgeInsets.only(top: 40, bottom: 40),
                   child: Text("Selamat datang!",
                       style: blackTextFont.copyWith(fontSize: 30)),
                 ),
                 TextFormField(
+                  validator: (val){return val.isEmpty ? "Masukkan email" : null;} ,
                   controller: emailController,
                   decoration: InputDecoration(
                       border: OutlineInputBorder(
@@ -58,11 +65,15 @@ class _SignInPageState extends State<SignInPage> {
                     ),
                   labelText: "Email Address",
                   hintText: "Email Address"),
+                  onChanged: (val){
+                    email = val;
+                  },
                 ),
                 SizedBox(
                   height: 16,
                 ),
                 TextFormField(
+                  validator: (val){return val.isEmpty ? "Masukkan password" : null;},
                   controller: passwordController,
                   decoration: InputDecoration(
                       border: OutlineInputBorder(
@@ -70,6 +81,9 @@ class _SignInPageState extends State<SignInPage> {
                     ),
                   labelText: "Password",
                   hintText: "Password"),
+                  onChanged: (value){
+                    password = value;
+                  },
                 ),
                 Center(
                   child: Container(
@@ -85,6 +99,7 @@ class _SignInPageState extends State<SignInPage> {
                         backgroundColor: mainColor,
                         onPressed: () {
                           // Routes.changePageNoBack(context, MainPage());
+                          signIn();
                         },
                       )
                     ),
@@ -99,6 +114,7 @@ class _SignInPageState extends State<SignInPage> {
                     GestureDetector(
                       onTap: () {
                         // Routes.changePageNoBack(context, SignUpPage());
+                        Routes.changePage(context, SignUpPage());
                       },
                       child: Text(
                         "Daftar",

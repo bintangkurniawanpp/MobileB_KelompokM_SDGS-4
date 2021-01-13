@@ -8,7 +8,7 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
 int _currentIndex = 0;
   final List<Widget> _children = [
-    HomePage(),
+    //HomePage(),
     ExerciseQuis(),
     Setting(),
   ];
