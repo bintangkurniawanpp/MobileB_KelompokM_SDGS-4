@@ -66,18 +66,6 @@ class _SignUpPageState extends State<SignUpPage> {
             SizedBox(
               height: 16,
             ),
-            TextField(
-              controller: retypePasswordController,
-              obscureText: true,
-              decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10)),
-                  labelText: "Confirm Password",
-                  hintText: "Confirm Password"),
-            ),
-            SizedBox(
-              height: 16,
-            ),
             Center(
               child: Container(
                   width: 50,

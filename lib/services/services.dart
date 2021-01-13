@@ -1,7 +1,5 @@
-import 'dart:convert';
-
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:rank_education/model/models.dart';
-import 'package:rank_education/shared/shared.dart';
 
 
 part 'auth_services.dart';
