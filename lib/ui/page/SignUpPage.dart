@@ -1,6 +1,10 @@
 part of 'pages.dart';
 
 class SignUpPage extends StatefulWidget {
+  final Function toogleView;
+
+  SignUpPage({this.toogleView});
+
   @override
   _SignUpPageState createState() => _SignUpPageState();
 }

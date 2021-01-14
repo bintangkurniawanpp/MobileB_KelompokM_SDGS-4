@@ -29,7 +29,7 @@ class _AddQuisState extends State<AddQuis> {
         setState(() {
           setState(() {
             _isLoading = false;
-            Routes.changePageNoBack(context, AddQuestion());
+            Routes.changePageNoBack(context, AddQuestion(quizId: quizId,));
           });
         });
       });
@@ -100,7 +100,9 @@ class _AddQuisState extends State<AddQuis> {
                       onTap: () {
                         addQuizOnline();
                       },
-                      child: addButton(context, "Create quis"),
+                      child: addButton(
+                        context: context, 
+                        label: "Create quis"),
                     ),
                     SizedBox(
                       height: 100,

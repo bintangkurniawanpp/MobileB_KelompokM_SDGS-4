@@ -1,6 +1,11 @@
 part of 'pages.dart';
 
 class SignInPage extends StatefulWidget {
+
+  final Function toogleView;
+
+  SignInPage({this.toogleView});
+
   @override
   _SignInPageState createState() => _SignInPageState();
 }
@@ -22,6 +27,9 @@ class _SignInPageState extends State<SignInPage> {
           setState(() {
             isLoading = false;
           });
+
+          //QuerySnapshot userInfoSnapshot = await _databaseMethods.getUserInfo(email);
+
           Routes.changePageNoBack(context, MainPage());
         }
       });

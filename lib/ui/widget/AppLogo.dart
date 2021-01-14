@@ -66,3 +66,19 @@ class PageThreeTitle extends StatelessWidget {
     );
   }
 }
+
+class PageFourTitle extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return RichText(
+      text: TextSpan(
+        style: TextStyle(
+            fontSize: 22
+        ),
+        children: <TextSpan>[
+          TextSpan(text: ' Question ', style: purpleTextFont),
+        ],
+      ),
+    );
+  }
+}
