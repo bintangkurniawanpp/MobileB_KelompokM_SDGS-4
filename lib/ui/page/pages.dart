@@ -5,6 +5,9 @@ import 'package:random_string/random_string.dart';
 import 'package:rank_education/services/services.dart';
 import 'package:rank_education/shared/shared.dart';
 import 'package:rank_education/ui/widget/widgets.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:rank_education/model/models.dart';
+import 'dart:io';
 
 
 //part 'HomePage.dart';
@@ -18,5 +21,6 @@ part 'MainPage.dart';
 part 'QuisList.dart';
 part 'AddQuestion.dart';
 part 'AddQuis.dart';
+part 'QuisPage.dart';
 part 'Setting.dart';
 

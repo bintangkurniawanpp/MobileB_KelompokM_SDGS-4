@@ -3,3 +3,4 @@ import 'package:rank_education/shared/shared.dart';
 
 part 'AppLogo.dart';
 part 'Button.dart';
+part 'QuizWidget.dart';

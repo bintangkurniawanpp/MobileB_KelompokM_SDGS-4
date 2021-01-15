@@ -12,16 +12,21 @@ class _QuisListState extends State<QuisList> {
   Widget quizList() {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 24),
-      child: Column(
+      child: ListView(
+        //physics: AlwaysScrollableScrollPhysics(),
         children: [
           StreamBuilder(
             stream: quizStream,
             builder: (context, snapshot) {
               return snapshot.data == null
-                  ? Container()
+                  ? Container(
+                    child: CircularProgressIndicator(),
+                  )
                   : ListView.builder(
+                      scrollDirection: Axis.vertical,
                       shrinkWrap: true,
-                      physics: ClampingScrollPhysics(),
+                      //physics: const BouncingScrollPhysics(),
+                      physics: const ClampingScrollPhysics(),
                       itemCount: snapshot.data.documents.length,
                       itemBuilder: (context, index) {
                         return QuizBlock(
@@ -31,7 +36,7 @@ class _QuisListState extends State<QuisList> {
                               snapshot.data.documents[index].data['quizTitle'],
                           description:
                               snapshot.data.documents[index].data['quizDesc'],
-                          id: snapshot.data.documents[index].data["id"],
+                          quizId: snapshot.data.documents[index].data["quizId"],
                         );
                       });
             },
@@ -63,47 +68,67 @@ class _QuisListState extends State<QuisList> {
           brightness: Brightness.light,
           elevation: 0.0,
           backgroundColor: Colors.transparent,
-          //brightness: Brightness.li,
         ),
         body: quizList());
   }
 }
 
 class QuizBlock extends StatelessWidget {
-  final String imageUrl, title, id, description;
+  final String imageUrl, title, quizId, description;
   //final int noOfQuestions;
 
   QuizBlock(
       {@required this.title,
       @required this.imageUrl,
       @required this.description,
-      @required this.id});
+      @required this.quizId});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        margin: EdgeInsets.only(bottom: 10),
-        height: 150,
-        child: Stack(
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(8),
-              child: Image.network(
-              imageUrl,
-              width: MediaQuery.of(context).size.width - 48,
-              fit: BoxFit.cover,
-            )),
-            Container(
-              alignment: Alignment.center,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(title),
-                  Text(description),
-                ],
-              ),
-            )
-          ],
-        ));
+    return GestureDetector(
+      onTap: (){
+        Routes.changePage(context, QuisPage(quizId));
+      },
+      child: Container(
+          margin: EdgeInsets.only(bottom: 10),
+          height: 150,
+          child: Stack(
+            children: [
+              ClipRRect(
+                  borderRadius: BorderRadius.circular(8),
+                  child: Image.network(
+                    imageUrl,
+                    width: MediaQuery.of(context).size.width - 48,
+                    fit: BoxFit.cover,
+                  )),
+              Container(
+                color: Colors.black26,
+                alignment: Alignment.center,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      title,
+                      style: TextStyle(
+                          fontSize: 18,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500),
+                    ),
+                    SizedBox(
+                      height: 4,
+                    ),
+                    Text(
+                      description,
+                      style: TextStyle(
+                          fontSize: 13,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500),
+                    )
+                  ],
+                ),
+              )
+            ],
+          )),
+    );
   }
 }
