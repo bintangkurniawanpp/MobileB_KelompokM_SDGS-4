@@ -48,8 +48,8 @@ class _SettingState extends State<Setting> {
       children: <Widget>[
         CircleAvatar(
           radius: 80.0,
-          backgroundImage: AssetImage(
-            "assets/images/avatarImg.png"),
+          backgroundImage: _imageFile == null ? AssetImage(
+            "assets/images/avatarImg.png") : FileImage(File(_imageFile.path)),
         ), 
         Positioned(
             bottom: 20.0, 
