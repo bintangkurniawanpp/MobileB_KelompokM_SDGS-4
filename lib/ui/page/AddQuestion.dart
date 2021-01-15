@@ -122,6 +122,7 @@ class _AddQuestionState extends State<AddQuestion> {
                           GestureDetector(
                             onTap: () {
                               Navigator.pop(context);
+                              Routes.changePage(context, MainPage());
                             },
                             child: addButton(
                                 context: context,
