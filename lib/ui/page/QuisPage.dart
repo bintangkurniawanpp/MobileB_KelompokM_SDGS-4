@@ -76,14 +76,16 @@ class _QuisPageState extends State<QuisPage> {
         backgroundColor: Colors.transparent,
       ),
       body: Container(
-        child: Column(children: [
-          questionsSnapshot.documents == null ? 
+        child: ListView(
+          children: [ 
+          questionsSnapshot == null ? 
           Container(
-            
+            child: CircularProgressIndicator(),
           ) : 
           ListView.builder(
+            padding: EdgeInsets.symmetric(horizontal: 24),
             shrinkWrap: true,
-            physics: ClampingScrollPhysics(),
+            physics: const ClampingScrollPhysics(),
             itemCount: questionsSnapshot.documents.length,
             itemBuilder: (context, index){
               return QuestionBlock(
@@ -93,6 +95,18 @@ class _QuisPageState extends State<QuisPage> {
             })
         ],)
       ),
+      floatingActionButton: FloatingActionButton.extended(
+        label: Text('Done'),
+        icon: Icon(Icons.check),
+        backgroundColor: mainColor,
+        onPressed: (){
+        Navigator.pushReplacement(context, MaterialPageRoute(
+          builder:(context) => ResultPage(
+            correct: _correct,
+            incorrect: _incorrect,
+            total: total,
+          )));
+      }),
     );
   }
 }
@@ -118,32 +132,129 @@ class _QuestionBlockState extends State<QuestionBlock> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Column(children: [
-        Text(widget.questionModel.question),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+        Text("${widget.index+1}) ${widget.questionModel.question}", style: TextStyle(fontSize: 18, color: Colors.black87),),
         SizedBox(height: 4,),
-        Option(
-          correctAnswer:widget.questionModel.option1,
-          description: widget.questionModel.option1,
-          option: "A",
-          optionSelected: optionSelected,
+        GestureDetector(
+            onTap: (){
+              if(!widget.questionModel.answered){
+                if(widget.questionModel.option1 == widget.questionModel.correctOption){
+                  optionSelected = widget.questionModel.option1;
+                  widget.questionModel.answered = true;
+                  _correct = _correct +1;
+                  _notAttempted = _notAttempted -1;
+                  setState(() {
+                    
+                  });
+                } else{
+                  optionSelected = widget.questionModel.option1;
+                  widget.questionModel.answered = true;
+                  _incorrect = _incorrect+1;
+                  _notAttempted = _notAttempted - 1;
+                  setState(() {
+                    
+                  });
+                }
+              }
+            },
+            child: Option(
+            correctAnswer:widget.questionModel.correctOption,
+            description: widget.questionModel.option1,
+            option: "A",
+            optionSelected: optionSelected,
+          ),
         ),SizedBox(height: 4,),
-        Option(
-          correctAnswer:widget.questionModel.option1,
-          description: widget.questionModel.option2,
-          option: "B",
-          optionSelected: optionSelected,
+        GestureDetector(
+            onTap: (){
+              if(!widget.questionModel.answered){
+                if(widget.questionModel.option2 == widget.questionModel.correctOption){
+                  optionSelected = widget.questionModel.option2;
+                  widget.questionModel.answered = true;
+                  _correct = _correct +1;
+                  _notAttempted = _notAttempted -1;
+                  setState(() {
+                    
+                  });
+                } else{
+                  optionSelected = widget.questionModel.option2;
+                  widget.questionModel.answered = true;
+                  _incorrect = _incorrect+1;
+                  _notAttempted = _notAttempted - 1;
+                  setState(() {
+                    
+                  });
+                }
+              }
+            },
+            child: Option(
+            correctAnswer:widget.questionModel.correctOption,
+            description: widget.questionModel.option2,
+            option: "B",
+            optionSelected: optionSelected,
+          ),
         ),SizedBox(height: 4,),
-        Option(
-          correctAnswer:widget.questionModel.option1,
-          description: widget.questionModel.option3,
-          option: "C",
-          optionSelected: optionSelected,
+        GestureDetector(
+            onTap: (){
+              if(!widget.questionModel.answered){
+                if(widget.questionModel.option3 == widget.questionModel.correctOption){
+                  optionSelected = widget.questionModel.option3;
+                  widget.questionModel.answered = true;
+                  _correct = _correct +1;
+                  _notAttempted = _notAttempted -1;
+                  setState(() {
+                    
+                  });
+                } else{
+                  optionSelected = widget.questionModel.option3;
+                  widget.questionModel.answered = true;
+                  _incorrect = _incorrect+1;
+                  _notAttempted = _notAttempted - 1;
+                  setState(() {
+                    
+                  });
+                }
+              }
+            },
+            child: Option(
+            correctAnswer:widget.questionModel.correctOption,
+            description: widget.questionModel.option3,
+            option: "C",
+            optionSelected: optionSelected,
+          ),
         ),SizedBox(height: 4,),
-        Option(
-          correctAnswer:widget.questionModel.option1,
-          description: widget.questionModel.option4,
-          option: "D",
-          optionSelected: optionSelected,
+        GestureDetector(
+          onTap: (){
+            if(!widget.questionModel.answered){
+                if(widget.questionModel.option4 == widget.questionModel.correctOption){
+                  optionSelected = widget.questionModel.option4;
+                  widget.questionModel.answered = true;
+                  _correct = _correct +1;
+                  _notAttempted = _notAttempted -1;
+                  setState(() {
+                    
+                  });
+                } else{
+                  optionSelected = widget.questionModel.option4;
+                  widget.questionModel.answered = true;
+                  _incorrect = _incorrect+1;
+                  _notAttempted = _notAttempted - 1;
+                  setState(() {
+                    
+                  });
+                }
+              }
+          },
+            child: Option(
+            correctAnswer:widget.questionModel.correctOption,
+            description: widget.questionModel.option4,
+            option: "D",
+            optionSelected: optionSelected,
+          ),
+        ),
+        SizedBox(
+          height:20,
         )
       ],),
     );

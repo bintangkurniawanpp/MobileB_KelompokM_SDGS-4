@@ -17,10 +17,12 @@ part 'SignInPage.dart';
 part 'SignUpPage.dart';
 part 'SplashPage.dart';
 // part 'MainPageGajadi.dart';
+part 'ResultPage.dart';
 part 'MainPage.dart';
 part 'QuisList.dart';
 part 'AddQuestion.dart';
 part 'AddQuis.dart';
 part 'QuisPage.dart';
+
 part 'Setting.dart';
 
